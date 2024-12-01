@@ -2,7 +2,9 @@
 ABSTRACT
 This project focuses on predictive modeling for diabetes using health indicators sourced from the CDC's Behavioral Risk Factor Surveillance System (BRFSS) 2015 survey. Three datasets are analyzed:
 1. Diabetes_012_health_indicators_BRFSS2015.csv: This dataset encompasses 253,680 survey responses and includes three target classes: no diabetes, prediabetes, and diabetes. Addressing class imbalance is a key consideration in this dataset.
+   
 2.Diabetes_binary_5050split_health_indicators_BRFSS2015.csv: Comprising 70,692 survey responses, this dataset achieves a balanced 50-50 split between respondents with no diabetes and those with prediabetes or diabetes.
+
 3. Diabetes_binary_health_indicators_BRFSS2015.csv: Similar to the first dataset, this one also contains 253,680 survey responses but with a binary target variable representing no diabetes versus prediabetes or diabetes. It is imbalanced.
 
 FEATURES
