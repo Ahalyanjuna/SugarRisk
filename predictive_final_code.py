@@ -10,9 +10,9 @@ from imblearn.over_sampling import SMOTE
 from sklearn.model_selection import train_test_split
 warnings.filterwarnings('ignore')
 
-data2 = pd.read_csv("F:/diabetes_binary_5050split_health_indicators_BRFSS2015.csv")
-data1= pd.read_csv("F:/diabetes_012_health_indicators_BRFSS2015.csv")
-data3= pd.read_csv("F:/diabetes_binary_health_indicators_BRFSS2015.csv")
+data2 = pd.read_csv("diabetes_binary_5050split_health_indicators_BRFSS2015.csv")
+data1= pd.read_csv("diabetes_012_health_indicators_BRFSS2015.csv")
+data3= pd.read_csv("diabetes_binary_health_indicators_BRFSS2015.csv")
 
 #Preprocessing : To drop rows with null values
 
@@ -126,7 +126,7 @@ st.plotly_chart(fig, use_container_width=True)
 st.write("The Bar Chart tells how many people have diabetes with respect to feature variables \nFor example , we can infer that 8.7k people who do not have high BP has diabetes and 27k people who have High BP have diabetes.")
 ###########################################################pie
 st.markdown("<hr/>", unsafe_allow_html=True)
-data2 = pd.read_csv("F:/diabetes_binary_5050split_health_indicators_BRFSS2015.csv")
+data2 = pd.read_csv("diabetes_binary_5050split_health_indicators_BRFSS2015.csv")
 
 income_bins = [0, 2, 5, 8]
 income_labels = ['Less than $10,000', 'Less than $35,000', '$35,000 - $75,000 or more']
@@ -279,7 +279,7 @@ st.pyplot(fig)
 st.write("The box plot shows the distribution of numerical features for individuals grouped by diabetes status. We can observe whether there are differences in BMI between diabetic and non-diabetic individuals. \nFor example, if the median BMI is higher for diabetic individuals compared to non-diabetic individuals, it suggests a potential association between BMI and diabetes.\nThere are no outliers in distribution of education and income")
 
 ######################################################
-data1 = pd.read_csv("F:/diabetes_012_health_indicators_BRFSS2015.csv")
+data1 = pd.read_csv("diabetes_012_health_indicators_BRFSS2015.csv")
 
 x1 = data1.drop('Diabetes_012',axis = 1)
 y1 = data1['Diabetes_012']
@@ -454,7 +454,7 @@ data_1={'actual':y_test_res_1,'predicted':y_pred_1}
 df_1=pd.DataFrame(data_1)
 st.write(df_1)
 #######################################################
-data2 = pd.read_csv("F:/diabetes_binary_5050split_health_indicators_BRFSS2015.csv")
+data2 = pd.read_csv("diabetes_binary_5050split_health_indicators_BRFSS2015.csv")
 x1 = data2.drop('Diabetes_binary',axis = 1)
 y1 = data2['Diabetes_binary']
 
