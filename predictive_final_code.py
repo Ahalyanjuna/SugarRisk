@@ -82,7 +82,7 @@ fig.update_yaxes(visible=False)
 fig.update_layout(showlegend=False)
 fig.update_xaxes(range=[0, 1.05]) 
 fig.update_traces(marker=dict(line=dict(width=bar_width)))
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, use_container_width=True,key="p1")
 
 y_pred = lr2.predict(X_test)
 lr_accuracy = accuracy_score(y_test, y_pred)
@@ -121,7 +121,7 @@ fig = px.bar(feature_sum_df, x=selected_feature, y='Diabetes_binary', text='Diab
 fig.update_traces(texttemplate='%{text:.2s}', textposition='outside')
 fig.update_xaxes(title_text=f'{selected_feature} (0:NO , 1: YES)')
 fig.update_yaxes(title_text='No. of people')
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, use_container_width=True,key="p2")
 
 st.write("The Bar Chart tells how many people have diabetes with respect to feature variables \nFor example , we can infer that 8.7k people who do not have high BP has diabetes and 27k people who have High BP have diabetes.")
 ###########################################################pie
@@ -176,7 +176,7 @@ with col1:
                         title="Income Level",
                         hole=0.5, color_discrete_sequence=px.colors.qualitative.Pastel)
     fig_income.update_traces(textinfo="percent+label", textposition="inside", showlegend=False)
-    st.plotly_chart(fig_income, use_container_width=True)
+    st.plotly_chart(fig_income, use_container_width=True,key="p3")
 
 with col2:
     st.subheader("Distribution of Diabetes by Age Group")
@@ -184,7 +184,7 @@ with col2:
                      title="Age Group",
                      hole=0.5, color_discrete_sequence=px.colors.qualitative.Pastel)
     fig_age.update_traces(textinfo="percent+label", textposition="inside", showlegend=False)
-    st.plotly_chart(fig_age, use_container_width=True)
+    st.plotly_chart(fig_age, use_container_width=True,key="p4")
 
 ##############################################################################
 diabetes_by_sex = data2.groupby("Sex")["Diabetes_binary"].value_counts().unstack().fillna(0)
@@ -217,7 +217,7 @@ with col1:
     fig_sex = px.pie(diabetes_by_sex, values="Diabetes Percentage", names="Sex", title="Distribution of Diabetes by Sex",
                  hole=0.5, color_discrete_sequence=px.colors.qualitative.Pastel)
     fig_sex.update_traces(textinfo="percent+label", textposition="inside", showlegend=False)
-    st.plotly_chart(fig_sex, use_container_width=True)
+    st.plotly_chart(fig_sex, use_container_width=True,key="p5")
 
 with col2:
     st.subheader("Distribution of Diabetes by Education")
@@ -225,7 +225,7 @@ with col2:
                        title="Distribution of Diabetes by Education Level",
                        hole=0.5, color_discrete_sequence=px.colors.qualitative.Pastel)
     fig_education.update_traces(textinfo="percent+label", textposition="inside", showlegend=False)
-    st.plotly_chart(fig_education, use_container_width=True)
+    st.plotly_chart(fig_education, use_container_width=True,key="p6")
 
 st.write("These plots provide insights into the distribution of diabetes across various demographic factors such as income level, age group, gender, and education level. They visualize the proportion of individuals with diabetes within each category, highlighting potential associations between demographic factors and the likelihood of having diabetes.")
 ####################################################################################################3
@@ -256,7 +256,7 @@ fig = px.bar(grouped_data_all,
 
 
 fig.update_layout(xaxis_title="Feature Variable", yaxis_title="Proportion", legend_title=binary_variable)
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, use_container_width=True,key="p7")
 
 st.write("* Each bar in the plot corresponds to a specific category of the feature variable. For example, if the feature variable is HighBP (high blood pressure), each bar represents the proportion of individuals with and without high blood pressure who have diabetes.\n* The height of each colored segment within the bar represents the proportion of individuals with diabetes (or without diabetes) within that category of the feature variable. For example, if the blue segment is taller than the orange segment in the HighBP bar, it means that a higher proportion of individuals with high blood pressure have diabetes compared to those without high blood pressure.")
 ##########################################################
@@ -326,7 +326,7 @@ fig.update_yaxes(visible=False)
 fig.update_layout(showlegend=False)
 fig.update_xaxes(range=[0, 1.05]) 
 fig.update_traces(marker=dict(line=dict(width=bar_width)))
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, use_container_width=True,key="p8")
 
 # Evaluate the model's accuracy on the test data
 y_pred = clf.predict(X_test_res)
@@ -368,7 +368,7 @@ fig.update_yaxes(visible=False)
 fig.update_layout(showlegend=False)
 fig.update_xaxes(range=[0, 1.05]) 
 fig.update_traces(marker=dict(line=dict(width=bar_width)))
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, use_container_width=True,key="p9")
 
 # Evaluate the model's accuracy on the test data
 y_pred = ovr_logreg.predict(X_test_res)
@@ -439,7 +439,7 @@ fig.update_yaxes(visible=False)
 fig.update_layout(showlegend=False)
 fig.update_xaxes(range=[0, 1.05]) 
 fig.update_traces(marker=dict(line=dict(width=bar_width)))
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, use_container_width=True,key="p10")
 
 y_pred_1 = lr.predict(X_test_res)
 lr_accuracy = accuracy_score(y_test_res_1, y_pred_1)
@@ -487,7 +487,7 @@ fig.update_yaxes(visible=False)
 fig.update_layout(showlegend=False)
 fig.update_xaxes(range=[0, 1.05]) 
 fig.update_traces(marker=dict(line=dict(width=bar_width)))
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, use_container_width=True,key="p11")
 
 y_pred = lr2.predict(X_test)
 lr_accuracy = accuracy_score(y_test, y_pred)
