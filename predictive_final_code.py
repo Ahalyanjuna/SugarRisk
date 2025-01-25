@@ -34,15 +34,15 @@ st.sidebar.header('Input Your Health Metrics')
 
 age = st.sidebar.slider('Age', min_value=0, max_value=120, value=50)
 bmi = st.sidebar.slider('BMI', min_value=0.0, max_value=100.0, value=25.0)
-gen_hlth = st.sidebar.slider('General Health (1-5)', min_value=1, max_value=5, value=3)
-ment_hlth = st.sidebar.slider('Mental Health (1-5)', min_value=1, max_value=5, value=3)
-phys_hlth = st.sidebar.slider('Physical Health (1-30)', min_value=1, max_value=30, value=15)
-education = st.sidebar.slider('Education (1-10)', min_value=1, max_value=10, value=3)
-income = st.sidebar.slider('Income (1-10)', min_value=1, max_value=10, value=3)
+gen_hlth = st.sidebar.slider('General Health - Would you say that in general your health is: scale 1-5 1 = excellent 2 = very good 3 = good 4 = fair 5 = poor', min_value=1, max_value=5, value=3)
+ment_hlth = st.sidebar.slider('Mental Health - Days of poor mental health scale 1-30 days', min_value=1, max_value=5, value=3)
+phys_hlth = st.sidebar.slider('Physical Health - physical illness or injury days in past 30 days scale 1-30', min_value=1, max_value=30, value=15)
+education = st.sidebar.slider('Education - 1 = Never attended school or only kindergarten 2 = Grades 1 through 8 (Elementary) 3 = Grades 9 through 11 (Some high school) 4 = Grade 12 or GED (High school graduate) 5 = College 1 year to 3 years (Some college or technical school) 6 = College 4 years or more (College graduate)', min_value=1, max_value=10, value=3)
+income = st.sidebar.slider('Income - 1 = less than $10,000\n 5 = less than $35,000\n 8 = $75,000 or more', min_value=1, max_value=10, value=3)
 
 yes_no_variables = ['HighBP', 'HighChol', 'CholCheck', 'Smoker', 'Stroke', 'HeartDiseaseorAttack', 'PhysActivity', 'Fruits', 'Veggies', 'HvyAlcoholConsump', 'AnyHealthcare', 'NoDocbcCost', 'DiffWalk']
 sex = st.sidebar.selectbox('Sex', ['Male', 'Female'])
-input_values = {var: st.sidebar.checkbox(f'{var} (Yes/No)') for var in yes_no_variables}
+input_values = {var: st.sidebar.checkbox(f'{var}') for var in yes_no_variables}
 
 for var, value in input_values.items():
     input_values[var] = 1 if value else 0
